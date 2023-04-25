@@ -1,0 +1,38 @@
+// Given an integer x, return true if x is a
+// palindrome
+// , and false otherwise.
+
+// Example 1:
+
+// Input: x = 121
+// Output: true
+// Explanation: 121 reads as 121 from left to right and from right to left.
+
+class Solution
+{
+public:
+    bool isPalindrome(long long x)
+    {
+        long long y = 0;
+        long long temp2 = x;
+        long long temp = 0;
+        if (x < 0)
+        {
+            return false;
+        }
+        while (x > 0)
+        {
+            temp = x % 10;
+            x = x / 10;
+            y = (y * 10) + temp;
+        }
+        if (temp2 == y)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+};
